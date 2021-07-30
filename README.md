@@ -18,29 +18,63 @@ Models:
 
 API requirements:
 -
-###### Characters
+#### Characters
 
-* GET all Characters : /api/v1/characters
-* Add Character : /api/v1/characters
-* GET Character byId : /api/v1/characters/{id}
-* Update Character  : /api/v1/characters/{id}
-* Delete Character  : /api/v1/characters/{id}
+<hr />
 
-###### Movies
+###### Get
+```
+/api/v1/characters
+/api/v1/characters/{id}
+```
+###### Update
+```
+/api/v1/characters/{id}
+```
+###### Delete
+```
+/api/v1/characters/{id}
+```
+<br />
 
-* GET all Movies :  /api/v1/movies
-* Add a Movie : /api/v1/movies
-* GET Movie byId : /api/v1/movies/{id}
-* Update Movie   : /api/v1/movies/{id}
-* Delete Movie  : /api/v1/movies/{id}
-* Update character in a movie : /api/v1/movies/{id}/characters
-* GET all characters in a moive : /api/v1/movies/getAllCharactersInMovie/{id}
+#### Movies
 
-###### Franchises
+<hr />
 
-* Update movie in franchise: /api/v1/franchises/{id}/movies
-* GET all movies in a franchise : /api/v1/farnchises/{id}/getAllMoviesInFranchises
-* Get all charachters in a franchise : /api/v1/farnchises/{id}/getAllCharactersInFranchise
+###### Get
+```
+/api/v1/movies
+/api/v1/movies/{id}
+```
+###### Update
+```
+/api/v1/movies/{id}
+```
+###### Delete
+```
+/api/v1/movies/{id} 
+```
+ <br />
+
+#### Franchises
+
+<hr />
+
+###### Get
+```
+/api/v1/franchises
+/api/v1/franchises/{id}
+```
+###### Update
+```
+/api/v1/franchises/{id}
+```
+###### Delete
+```
+/api/v1/franchises/{id}
+```
+
+
 
 
 ## Authors
