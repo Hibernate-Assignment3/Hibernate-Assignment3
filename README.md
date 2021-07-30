@@ -26,7 +26,7 @@ API requirements:
 * Update Character  : /api/v1/characters/{id}
 * Delete Character  : /api/v1/characters/{id}
 
-###### Moives
+###### Movies
 
 * GET all Movies :  /api/v1/movies
 * Add a Movie : /api/v1/movies
