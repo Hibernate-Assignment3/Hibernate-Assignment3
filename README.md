@@ -18,6 +18,10 @@ Models:
 
 API requirements:
 -
+
+*Genreic CRUD*
+-
+
 #### Characters
 
 <hr />
