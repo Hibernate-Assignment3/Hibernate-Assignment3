@@ -18,7 +18,7 @@ Models:
 
 API requirements:
 -
-*Characters
+###### Characters
 
 * GET all Characters : /api/v1/characters
 * Add Character : /api/v1/characters
@@ -26,9 +26,9 @@ API requirements:
 * Update Character  : /api/v1/characters/{id}
 * Delete Character  : /api/v1/characters/{id}
 
-*Moives
+###### Moives
 
-* GET all Movies : /api/v1/movies
+* GET all Movies :  /api/v1/movies
 * Add a Movie : /api/v1/movies
 * GET Movie byId : /api/v1/movies/{id}
 * Update Movie   : /api/v1/movies/{id}
@@ -36,7 +36,7 @@ API requirements:
 * Update character in a movie : /api/v1/movies/{id}/characters
 * GET all characters in a moive : /api/v1/movies/getAllCharactersInMovie/{id}
 
-*Franchises
+###### Franchises
 
 * Update movie in franchise: /api/v1/franchises/{id}/movies
 * GET all movies in a franchise : /api/v1/farnchises/{id}/getAllMoviesInFranchises
