@@ -49,7 +49,6 @@ public class MovieController {
         Movie add = movieRepository.save(movie);
         HttpStatus status;
         status = HttpStatus.CREATED;
-        // Return a location -> url to get the new resource
         return new ResponseEntity<>(add, status);
     }
 
