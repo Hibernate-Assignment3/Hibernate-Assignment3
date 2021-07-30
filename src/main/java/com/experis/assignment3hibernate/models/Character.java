@@ -10,27 +10,33 @@ import java.util.stream.Collectors;
 public class Character {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    private Long id;
 
 
-    @Column(name="full_name")
+    @Column(name = "full_name")
     private String fullName;
 
     private String alias;
 
     private String gender;
 
-    private  String photo;
-
+    private String photo;
 
 
     // Charecter entity
-    @ManyToMany(mappedBy = "characterData")
-    public List<Movie> movies;
+  /*  @ManyToMany
+    @JoinTable(
+            name = "character_movies",
+            joinColumns = {@JoinColumn(name = "character_id")},
+            inverseJoinColumns = {@JoinColumn(name = "movie_id")}
+    )
+*/
+    @ManyToMany(mappedBy = "characters")
+    List<Movie> movies;
 
     @JsonGetter("movies")
     public List<String> movies() {
-        if(movies != null){
+        if (movies != null) {
             return movies.stream()
                     .map(movie -> {
                         return "/api/v1/movies/" + movie.getId();
@@ -38,7 +44,6 @@ public class Character {
         }
         return null;
     }
-
 
 
     public Long getId() {
