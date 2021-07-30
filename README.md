@@ -74,7 +74,8 @@ API requirements:
 /api/v1/franchises/{id}
 ```
 
-
+#### Swagger API Link  📄
+[Documentation with Swagger](http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config)
 
 
 ## Authors
