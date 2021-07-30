@@ -2,7 +2,6 @@ package com.experis.assignment3hibernate.controllers;
 
 
 import com.experis.assignment3hibernate.models.Character;
-import com.experis.assignment3hibernate.models.Movie;
 import com.experis.assignment3hibernate.repositories.CharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +20,11 @@ public class CharacterController {
     @Autowired
     private CharacterRepository characterRepository;
 
+    /**
+     * Get all characters in the database
+     *
+     * @return list of characters
+     */
     @GetMapping
     public ResponseEntity<List<Character>> getAllCharacters() {
         List<Character> data = characterRepository.findAll();
@@ -29,6 +33,12 @@ public class CharacterController {
     }
 
 
+    /**
+     * Get a specific character by id
+     *
+     * @param id - character id
+     * @return - Tje character
+     */
     @GetMapping("/{id}")
     public ResponseEntity<Character> getCharacterById(@PathVariable Long id) {
         Optional<Character> characterData = characterRepository.findById(id);
@@ -37,6 +47,12 @@ public class CharacterController {
     }
 
 
+    /**
+     * Add a character to the database
+     *
+     * @param character - the added character
+     * @return - the created character
+     */
     @PostMapping
     public ResponseEntity<Character> addCharacter(@RequestBody Character character) {
         Character add = characterRepository.save(character);
@@ -46,11 +62,19 @@ public class CharacterController {
         return new ResponseEntity<>(add, status);
     }
 
-   @PutMapping("/{id}")
-    public ResponseEntity<Character> updateAddress(@RequestBody Character character, @PathVariable Long id){
+
+    /**
+     * Update existing character
+     *
+     * @param character - the new character object
+     * @param id        - the character id
+     * @return the updated character.
+     */
+    @PutMapping("/{id}")
+    public ResponseEntity<Character> updateCharacter(@RequestBody Character character, @PathVariable Long id) {
         HttpStatus status;
         Character retAdd = new Character();
-        if(!Objects.equals(id, character.getId())){
+        if (!Objects.equals(id, character.getId())) {
             status = HttpStatus.BAD_REQUEST;
             return new ResponseEntity<>(retAdd, status);
         }
@@ -60,6 +84,12 @@ public class CharacterController {
     }
 
 
+    /**
+     * Deletes character from the database
+     *
+     * @param id - character id
+     * @return - the database without the deleted character.
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteCharecter(@PathVariable("id") long id) {
         try {
